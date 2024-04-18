@@ -1,0 +1,18 @@
+# Ignorar archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de compilación y ejecutables
+*.o
+*.out
+*.exe
+
+# Ignorar directorios y archivos generados por IDEs
+.idea/
+.vscode/
+*.suo
+*.sln
+#
+env
+**/migrations/
+**/__pycache__
