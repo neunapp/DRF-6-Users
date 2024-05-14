@@ -30,6 +30,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     #
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
+    token_expired = models.DateTimeField(
+        'Token exoired',
+        blank=True,
+        null=True
+    )
     
     objects = UserMenager()
     

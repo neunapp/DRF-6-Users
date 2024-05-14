@@ -10,6 +10,13 @@ class Nota(models.Model):
       max_length=30
     )
     description = models.TextField('descripcion')
+    user = models.ForeignKey(
+      settings.AUTH_USER_MODEL,
+      related_name='created_nota',
+      on_delete=models.CASCADE,
+      blank=True,
+      null=True
+    )
 
     class Meta:
       verbose_name = 'Nota'

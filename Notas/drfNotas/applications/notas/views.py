@@ -18,9 +18,15 @@ class SoloMasculino(BasePermission):
         else:
             return False
 
+
 class ListaNotas(ListAPIView):
     serializer_class = NotaSerilizer
-    queryset = Nota.objects.all()
     permission_classes = [IsAuthenticated, SoloMasculino]
     authentication_classes = [TokenAuthentication,]
+    
+    def get_queryset(self):
+        queryset = Nota.objects.filter(
+           user=self.request.user
+        )
+        return queryset
 
